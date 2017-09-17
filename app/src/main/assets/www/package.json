@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/Citizen-T/push_ups",
   "author": "Michael Triantafelow <MTriantafelow@gmail.com>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bootstrap": "4.0.0-beta"
+  }
 }
