@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity
 
         WebView webView = (WebView) findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
-        String customHtml = "<html><body><h1>Hello, World!</h1></body></html>";
-        webView.loadData(customHtml, "text/html", "UTF-8");
+        webView.loadUrl("file:///android_asset/www/index.html");
     }
 }
