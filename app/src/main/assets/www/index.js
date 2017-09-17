@@ -1,7 +1,7 @@
 'use strict';
 (function () {
-let hello = document.getElementById('hello');
-hello.onclick = () => {
-    hello.textContent += '!';
+let counter = document.getElementById('counter');
+counter.onclick = () => {
+    counter.textContent = parseInt(counter.textContent) + 1;
 }
 })();
