@@ -1,0 +1,9 @@
+{
+  "name": "co.thirtyroses.pushups",
+  "version": "0.1.0",
+  "description": "A push-up coaching app",
+  "main": "index.js",
+  "repository": "https://github.com/Citizen-T/push_ups",
+  "author": "Michael Triantafelow <MTriantafelow@gmail.com>",
+  "license": "Apache-2.0"
+}
