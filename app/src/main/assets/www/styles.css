@@ -2,9 +2,9 @@ html, body {
     height: 100%;
 }
 
-#counter_space {
+#app_space {
     display: flex;
-    justify-content: center;
     height: 100%;
     align-items: center;
+    justify-content: center;
 }
