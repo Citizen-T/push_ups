@@ -5,4 +5,8 @@ let counter = document.getElementById('counter');
 counterSpace.onclick = () => {
     counter.textContent = parseInt(counter.textContent) + 1;
 }
+let resetButton = document.getElementById("reset_button");
+resetButton.onclick = () => {
+    counter.textContent = 0;
+}
 })();
