@@ -7,8 +7,6 @@
   "author": "Michael Triantafelow <MTriantafelow@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "bootstrap": "4.0.0-beta",
-    "jquery": "3.2.1",
-    "popper.js": "1.11.0"
+    "material-components-web": "^0.21.1"
   }
 }

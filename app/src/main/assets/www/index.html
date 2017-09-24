@@ -1,34 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="mdc-typography">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div id="app_space" class="container-fluid text-center">
+    <div id="app_space">
       <div>
-        <div id="counter_space" class="row">
-          <div class="col">
-              <span id="counter">0</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <button type="button" class="btn btn-primary">Primary</button>
-          </div>
-          <div class="col">
-            <button id="reset_button" type="button" class="btn btn-secondary">Secondary</button>
-          </div>
-        </div>
+          <span id="counter">0</span>
       </div>
     </div>
 
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/popper.js/dist/popper.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <button id="reset_button" class="mdc-fab material-icons app-fab--absolute" 
+      aria-label="Favorite" 
+      data-mdc-auto-init="MDCRipple">
+      <span class="mdc-fab__icon">favorite</span>
+    </button>
+
+    <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script>mdc.autoInit()</script>
     <script src="index.js"></script>
   </body>
 </html>
