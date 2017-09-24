@@ -11,65 +11,59 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body class="app_body">
-      <div class="mdc-toolbar mdc-toolbar--fixed">
-          <div class="mdc-toolbar__row">
-            <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-              <button class="demo-menu material-icons mdc-toolbar__icon--menu">menu</button>
-              <span class="mdc-toolbar__title catalog-title">Temporary Drawer</span>
-            </section>
+    <div class="mdc-toolbar mdc-toolbar--fixed">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="demo-menu material-icons mdc-toolbar__icon--menu">menu</button>
+          <span class="mdc-toolbar__title catalog-title">Temporary Drawer</span>
+        </section>
+      </div>
+    </div>
+    <aside class="mdc-temporary-drawer">
+      <nav class="mdc-temporary-drawer__drawer">
+        <header class="mdc-temporary-drawer__header">
+          <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
+            Header here
           </div>
-        </div>
-    
-        <aside class="mdc-temporary-drawer">
-          <nav class="mdc-temporary-drawer__drawer">
-            <header class="mdc-temporary-drawer__header">
-              <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
-                Header here
-              </div>
-            </header>
-            <nav class="mdc-temporary-drawer__content mdc-list-group">
-              <div id="icon-with-text-demo" class="mdc-list">
-                <a class="mdc-list-item mdc-temporary-drawer--selected" href="#">
-                  <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
-                </a>
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
-                </a>
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">send</i>Sent Mail
-                </a>
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">drafts</i>Drafts
-                </a>
-              </div>
-    
-              <hr class="mdc-list-divider">
-    
-              <div class="mdc-list">
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>All Mail
-                </a>
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">delete</i>Trash
-                </a>
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">report</i>Spam
-                </a>
-              </div>
-            </nav>
-          </nav>
-        </aside>
-    
+        </header>
+        <nav class="mdc-temporary-drawer__content mdc-list-group">
+          <div id="icon-with-text-demo" class="mdc-list">
+            <a class="mdc-list-item mdc-temporary-drawer--selected" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+            </a>
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+            </a>
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">send</i>Sent Mail
+            </a>
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">drafts</i>Drafts
+            </a>
+          </div>
+          <hr class="mdc-list-divider">
+          <div class="mdc-list">
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>All Mail
+            </a>
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">delete</i>Trash
+            </a>
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">report</i>Spam
+            </a>
+          </div>
+        </nav>
+      </nav>
+    </aside>
     <main id="app_main" class="app-main mdc-toolbar-fixed-adjust">
-        <span id="counter">0</span>
+      <span id="counter">0</span>
     </main>
-
     <button id="reset_button" class="mdc-fab material-icons app-fab--absolute" 
       aria-label="Favorite" 
       data-mdc-auto-init="MDCRipple">
       <span class="mdc-fab__icon">favorite</span>
     </button>
-
     <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
     <script>mdc.autoInit()</script>
     <script src="index.js"></script>
