@@ -32,6 +32,8 @@ const HomeActivity = {
         while (main.firstChild)
           main.removeChild(main.firstChild);
         main.appendChild(homeSpace);
+        let fab = document.getElementById('fab');
+        fab.remove();
       }
     };
   }
