@@ -33,7 +33,8 @@ const HomeActivity = {
           main.removeChild(main.firstChild);
         main.appendChild(homeSpace);
         let fab = document.getElementById('fab');
-        fab.remove();
+        if (fab)
+          fab.remove();
       }
     };
   }
