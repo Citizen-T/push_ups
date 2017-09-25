@@ -22,6 +22,14 @@ freestyle.onclick = () => {
   CounterActivity.make().show();
 }
 
+let plans = document.getElementById('training_plans');
+plans.onclick = () => {
+  var drawerEl = document.querySelector('.mdc-temporary-drawer');
+  var drawer = new mdc.drawer.MDCTemporaryDrawer(drawerEl);
+  drawer.open = false;
+  WorkoutPlansActivity.make().show();
+}
+
 const HomeActivity = {
   make: function() {
     return {
@@ -71,6 +79,27 @@ const CounterActivity = {
   }
 }
 
+const WorkoutPlansActivity = {
+  make: function() {
+    return {
+      show: function() {
+        let main = document.getElementById('app_main');
+        let planSpace = document.createElement('div');
+        planSpace.id = 'plan_space';
+        for (let i=0; i < trainingPlans.length; i++) {
+          // create card with plan
+          let card = document.createElement('div');
+          card.textContent = JSON.stringify(trainingPlans[i]);
+          planSpace.appendChild(card);
+        }
+        while (main.firstChild)
+          main.removeChild(main.firstChild);
+        main.appendChild(planSpace);
+      }
+    };
+  }
+};
+
 const FloatingActionButton = {
   make: function() {
     return {
@@ -85,4 +114,30 @@ const FloatingActionButton = {
     };
   }
 };
+
+const trainingPlans = [
+  {
+      name: "One Hundred Pushups",
+      sessions: [
+          {
+              sets: [6, 6, 4, 4, 5]
+          },
+          {
+              sets: [6, 8, 6, 6, 7]
+          },
+          {
+              sets: [8, 10, 7, 7, 10]
+          },
+          {
+              sets: [9, 11, 8, 8, 11]
+          },
+          {
+              sets: [10, 12, 9, 9, 13]
+          },
+          {
+              sets: [12, 13, 10, 10, 15]
+          }
+      ]
+  }
+];
 })();
