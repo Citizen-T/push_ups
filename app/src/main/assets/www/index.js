@@ -48,22 +48,38 @@ const CounterActivity = {
         counter.id = 'counter';
         counter.textContent = '0';
         counterSpace.appendChild(counter);
-        
         counterSpace.onclick = () => {
           counter.textContent = parseInt(counter.textContent) + 1;
         }
-        
-        let resetButton = document.getElementById("reset_button");
+        let fab = FloatingActionButton.make().show();        
+        let resetButton = document.getElementById("fab");
+        let icon = document.createElement('span');
+        icon.classList = ['mdc-fab__icon'];
+        icon.textContent = 'refresh';
+        resetButton.appendChild(icon);
         resetButton.onclick = () => {
           counter.textContent = 0;
         }
-
         while (main.firstChild)
           main.removeChild(main.firstChild);
-        
         main.appendChild(counterSpace);
       }
     };
   }
 }
+
+const FloatingActionButton = {
+  make: function() {
+    return {
+      show: function() {
+        let body = document.getElementById('app_body');
+        let fab = document.createElement('button');
+        fab.id = 'fab';
+        fab.classList = 'mdc-fab material-icons app-fab--absolute';
+        fab.setAttribute('data-mdc-auto-init', 'MDCRipple');
+        body.appendChild(fab);
+      }
+    };
+  }
+};
 })();
