@@ -113,6 +113,9 @@ const WorkoutPlansActivity = {
           let start = document.createElement('button');
           start.classList = 'mdc-button mdc-button--compact mdc-card__action';
           start.textContent = 'Start';
+          start.onclick = () => {
+            ActionBar.make().timer();
+          }
           section_3.appendChild(start);
           card.appendChild(section_3);
           planSpace.appendChild(card);
@@ -144,6 +147,20 @@ const FloatingActionButton = {
         while (fab.firstChild)
           fab.removeChild(fab.firstChild);
         fab.remove();
+      }
+    };
+  }
+};
+
+const ActionBar = {
+  make: function() {
+    return {
+      timer: function() {
+        let actions = document.getElementById('actions');
+        let button = document.createElement('button');
+        button.classList = 'material-icons mdc-toolbar__icon';
+        button.textContent = 'timer';
+        actions.appendChild(button);
       }
     };
   }
