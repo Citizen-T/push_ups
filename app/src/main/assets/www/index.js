@@ -84,12 +84,37 @@ const WorkoutPlansActivity = {
     return {
       show: function() {
         let main = document.getElementById('app_main');
+        while (main.firstChild)
+          main.removeChild(main.firstChild);
+        FloatingActionButton.make().hide();
         let planSpace = document.createElement('div');
         planSpace.id = 'plan_space';
+        planSpace.classList = 'training-plan-card';
         for (let i=0; i < trainingPlans.length; i++) {
           // create card with plan
           let card = document.createElement('div');
-          card.textContent = JSON.stringify(trainingPlans[i]);
+          card.classList = 'mdc-card';
+          let section_1 = document.createElement('section');
+          section_1.classList = 'mdc-card__media one-hundred-plan__16-9-media';
+          card.appendChild(section_1);
+          let section_2 = document.createElement('section');
+          section_2.classList = 'mdc-card__primary';
+          let title = document.createElement('h1');
+          title.classList = 'mdc-card__title mdc-card__title--large';
+          title.textContent = trainingPlans[i].name;
+          section_2.appendChild(title);
+          let subtitle = document.createElement('h2');
+          subtitle.classList = 'mdc-card__subtitle';
+          subtitle.textContent = trainingPlans[i].pitch;
+          section_2.appendChild(subtitle);
+          card.appendChild(section_2);
+          let section_3 = document.createElement('section');
+          section_3.classList = 'mdc-card__actions';
+          let start = document.createElement('button');
+          start.classList = 'mdc-button mdc-button--compact mdc-card__action';
+          start.textContent = 'Start';
+          section_3.appendChild(start);
+          card.appendChild(section_3);
           planSpace.appendChild(card);
         }
         while (main.firstChild)
@@ -110,6 +135,15 @@ const FloatingActionButton = {
         fab.classList = 'mdc-fab material-icons app-fab--absolute';
         fab.setAttribute('data-mdc-auto-init', 'MDCRipple');
         body.appendChild(fab);
+      },
+
+      hide: function() {
+        let fab = document.getElementById('fab');
+        if (!fab)
+          return;
+        while (fab.firstChild)
+          fab.removeChild(fab.firstChild);
+        fab.remove();
       }
     };
   }
@@ -117,7 +151,9 @@ const FloatingActionButton = {
 
 const trainingPlans = [
   {
-      name: "One Hundred Pushups",
+      name: 'One Hundred Pushups',
+      pitch: 'Six week program that guides you to your goal of completing 100 consecutive push ups.',
+      description: 'Hundred Pushups is the ultimate program to train the body to go from just one pushup to 100 consecutive reps in less than two months -- sculpting muscles in the chest, abs, back, glutes and arms without a single piece of unwieldy equipment.',
       sessions: [
           {
               sets: [6, 6, 4, 4, 5]

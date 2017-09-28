@@ -36,3 +36,16 @@ html, body {
         right: 1.5rem;
     }
 }
+
+.training-plan-card {
+    padding: 1rem;
+}
+
+.one-hundred-plan__16-9-media {
+    background-image: url("img/one_hundred.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 107, 0);
+    height: 12.313rem;
+    /* 197sp, for 16:9 ratio with 350sp demo card width */
+}
