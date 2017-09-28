@@ -48,6 +48,28 @@ const HomeActivity = {
   }
 };
 
+const CountDownActivity = {
+  make: function() {
+    return {
+      show: function() {
+        let main = document.getElementById('app_main');
+        while (main.firstChild)
+          main.removeChild(main.firstChild);
+        let counterSpace = document.createElement('div');
+        counterSpace.id = 'counter_space';
+        let counter = document.createElement('span');
+        counter.id = 'counter';
+        counter.textContent = '6';
+        counterSpace.appendChild(counter);
+        counterSpace.onclick = () => {
+          counter.textContent = parseInt(counter.textContent) - 1;
+        }
+        main.appendChild(counterSpace);
+      }
+    };
+  }
+};
+
 const FreestyleActivity = {
   make: function() {
     return {
@@ -115,6 +137,7 @@ const WorkoutPlansActivity = {
           start.textContent = 'Start';
           start.onclick = () => {
             ActionBar.make().timer();
+            CountDownActivity.make().show();
           }
           section_3.appendChild(start);
           card.appendChild(section_3);
