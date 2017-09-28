@@ -19,7 +19,7 @@ freestyle.onclick = () => {
   var drawerEl = document.querySelector('.mdc-temporary-drawer');
   var drawer = new mdc.drawer.MDCTemporaryDrawer(drawerEl);
   drawer.open = false;
-  CounterActivity.make().show();
+  FreestyleActivity.make().show();
 }
 
 let plans = document.getElementById('training_plans');
@@ -48,7 +48,7 @@ const HomeActivity = {
   }
 };
 
-const CounterActivity = {
+const FreestyleActivity = {
   make: function() {
     return {
       show: function() {
