@@ -179,8 +179,11 @@ const ActionBar = {
   make: function() {
     return {
       timer: function() {
+        if (document.getElementById('timer_action'))
+          return;
         let actions = document.getElementById('actions');
         let button = document.createElement('button');
+        button.id = 'timer_action';
         button.classList = 'material-icons mdc-toolbar__icon';
         button.textContent = 'timer';
         actions.appendChild(button);
